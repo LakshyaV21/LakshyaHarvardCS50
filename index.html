@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                 <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3> Who founded the highly acclaimed soccer club, Barcelona FC?</h3>
+                 <p id="answer"></p>
+
+                 <button id="incorrect">Lionel Messi</button>
+                 <button id="correct"> Joan Gamper</button>
+                 <button id="incorrect">Johan Cryuff</button>
+                 <button id="incorrect">Hansi Flick</button>
+<script>
+    let correct = document.querySelector('#correct');
+    let incorrect = document.querySelectorAll("#incorrect"); //used querySelectorAll to loop through the buttons
+    let answers = document.querySelector('#answers');
+
+    correct.onclick = function() {
+                        correct.style.backgroundColor = 'green';
+                        status.innerHTML = "Correct!";
+                    };
+
+                    for (let i = 0; i < incorrect.length; i++) {
+                        incorrect[i].onclick = function() {
+                            incorrect[i].style.backgroundColor = 'red';
+                            status.innerHTML = "Incorrect!";
+                        };
+                    }
+
+</script>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>Which magazine ranked Barcelona FC as the most valuable soccer club in the world?</h3>
+                 <p id="freeanswer"></p>
+
+                 <form>
+                    <input type="text" id="magazine">
+                    <button> Submit Answer</button>
+
+                    <script>
+                        let freeanswer = document.querySelector('#freeanswer');
+                        let magazine = document.querySelector('#magazine'); // Assuming this is an input field
+
+                            magazine.addEventListener('input', function () { // Runs when the user types
+                         if (magazine.value === 'Forbes' || magazine.value === 'forbes' || magazine.value === 'FORBES') {
+                             magazine.style.backgroundColor = 'green';
+                                 freeanswer.innerHTML = 'Correct';
+                        } else {
+                             magazine.style.backgroundColor = 'red';
+                             freeanswer.innerHTML = 'Incorrect';
+                               }
+                            });
+
+                        </script>
+                 </form>
+            </div>
+        </div>
+    </body>
+</html>
